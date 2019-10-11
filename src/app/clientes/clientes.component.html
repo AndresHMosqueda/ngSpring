@@ -1,0 +1,30 @@
+<div class="card border-success mb-3" >
+    <div class="card-header bg-transparent border-success">Clientes</div>
+    <div class="card-body text-success">
+        <h5 class="card-title">Success card title</h5>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th> id</th>
+                    <th> nombre</th>
+                    <th> apellido</th>
+                    <th> email</th>
+                    <th> fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cliente of clientes">
+                    <td> {{cliente.id}} </td>
+                    <td> {{cliente.nombre}} </td>
+                    <td> {{cliente.apellido}} </td>
+                    <td> {{cliente.email}} </td>
+                    <td> {{cliente.createAt}} </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+    </div>
+</div>
