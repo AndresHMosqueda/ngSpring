@@ -6,7 +6,14 @@ import { NavBarComponent } from './header/navbar.component';
 import { FooterComponent } from './footer/footer/footer.component';
 import { DirectiveComponent } from './directive/directive.component';
 import { ClientesComponent } from './clientes/clientes.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ClienteService } from './cliente.service';
 
+const routes: Routes = [
+{path: '', redirectTo: '/clientes', pathMatch: 'full'},
+{path: 'directives', component: DirectiveComponent},
+{path: 'clientes', component: ClientesComponent}
+];
 
 @NgModule({
   declarations: [
@@ -18,9 +25,10 @@ import { ClientesComponent } from './clientes/clientes.component';
     
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [ ClienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
